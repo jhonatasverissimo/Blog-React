@@ -766,4 +766,11 @@ a {
   font-size: 64px;
   border-radius: 4px;
 }
+
+button {
+  padding: 8px;
+  background-color: #F5F7F7;
+  border: 0;
+  border-radius: 4px;
+}
 /*# sourceMappingURL=style.css.map */
