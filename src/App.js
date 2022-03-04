@@ -1,9 +1,12 @@
   import Header from './components/Header';
-  import Articles from './components/Articles';
-  
+  //import Articles from './components/Articles';
+  import Main from './pages/Main';
+
+  //Verificar estados dos elementos
   import {useState} from 'react';
 
 function App() {
+  
   
   useState()
   //Usando de desestruturação
@@ -24,7 +27,7 @@ function App() {
   return (
     <>
       <Header></Header>
-      <Articles></Articles>
+      <Main></Main>
 
       <h3>Items no carirnho: {carrinho}</h3>
 
