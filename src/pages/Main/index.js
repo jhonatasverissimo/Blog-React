@@ -1,6 +1,6 @@
 import api from "../../services/api";
 import Posts from "../../components/Posts";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 const Main = () => {
     
     //Estilos diferentes de requisição
@@ -12,21 +12,24 @@ const Main = () => {
     }
     */
 
-    /*
-    Método Then
-    function handleAxios(){
-        const response =  api.get('/posts')
-        .then((response) =>{
-            console.log(response);
-        })
-    }
-    */
-
     const [post, setPost] = useState([]);
+    //Método Then
+    
+    useEffect(() => {
+        api.get('/posts')
+        .then((response)=> {
+            setPost(response.data)
+        })
+    },[])
+
+    
+
+    
 
 
 
     //Requisição com Try Catch 
+        /*
         async function handleAxios(){
             try {
                 const response = await api.get('/posts');
@@ -36,13 +39,13 @@ const Main = () => {
                 console.log(error);
             }
         }
+        */
 
     
     return(
         <>
             <section className="container">
-                <h1>Main.JS</h1>
-                <button onClick={handleAxios}>Fazer requisição</button>
+                <h2 className="mt-3">Articles</h2>
 
                 <div className="container-posts mt-5">
                     {
@@ -50,8 +53,13 @@ const Main = () => {
                             return(
                                 <>
                                 
-                                    <Posts key={post.id} subtitle={post.category} title={post.title} >
-                                        {post.description}
+                                    <Posts 
+                                     key={post.id} 
+                                     subtitle={post.category} 
+                                     title={post.title} 
+                                     author ={post.author} 
+                                     date ={post.date}
+                                     children={post.description}>
                                     </Posts>
                                     
                                 </>
