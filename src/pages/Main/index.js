@@ -45,7 +45,7 @@ const Main = () => {
     return(
         <>
             <section className="container">
-                <h2 className="mt-3">Articles</h2>
+                <h2 className="mt-3">Main</h2>
 
                 <div className="container-posts mt-5">
                     {

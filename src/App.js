@@ -1,10 +1,12 @@
   import Header from './components/Header';
   //import Articles from './components/Articles';
-  import Main from './pages/Main';
+  //import Main from './pages/Main';
 
   //Verificar estados dos elementos
   import {useState} from 'react';
+  //import axios from 'axios';
 
+  import Rota from './routes';
 function App() {
   
   
@@ -24,10 +26,13 @@ function App() {
     }
     console.log("Está chamando a função:" + carrinho);
   }
+
+  
+  
   return (
     <>
       <Header></Header>
-      <Main></Main>
+      <Rota></Rota>
 
       <h3>Items no carirnho: {carrinho}</h3>
 
